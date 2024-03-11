@@ -13,6 +13,7 @@ export interface Game {
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
+  rating_top: number;
 }
 
 const useGames = (gameQuary: GameQuary) =>
@@ -23,7 +24,7 @@ const useGames = (gameQuary: GameQuary) =>
         genres: gameQuary.genre?.id,
         platforms: gameQuary.platform?.id,
         ordering: gameQuary.sortOrder,
-        search:gameQuary.searchText
+        search: gameQuary.searchText,
       },
     },
     [gameQuary]
